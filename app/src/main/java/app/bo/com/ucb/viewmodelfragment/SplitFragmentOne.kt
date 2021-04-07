@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 
 
 class SplitFragmentOne : Fragment() {
@@ -21,9 +24,18 @@ class SplitFragmentOne : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.fragment_split_one_button).setOnClickListener {
+        //val totalViewModel = TotalViewModel()
+        val totalViewModel = ViewModelProvider(requireActivity()).get(TotalViewModel::class.java)
 
+        totalViewModel.counter.observe(viewLifecycleOwner, Observer(::updateText))
+
+        view.findViewById<Button>(R.id.fragment_split_one_button).setOnClickListener {
+            totalViewModel.addTotal()
         }
+    }
+
+    private fun updateText(i: Int) {
+        view?.findViewById<TextView>(R.id.fragment_split_one_text)?.text = getString(R.string.total, i)
     }
 
 
