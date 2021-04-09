@@ -7,14 +7,14 @@
     tools:context=".MainActivity">
 
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment3"
         android:name="app.bo.com.ucb.viewmodelfragment.SplitFragmentOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment4"
         android:name="app.bo.com.ucb.viewmodelfragment.SplitFragmentTwo"
         android:layout_width="wrap_content"
