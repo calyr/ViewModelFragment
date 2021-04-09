@@ -45,11 +45,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    def lifecycle_version = "2.3.1"
-    def arch_version = "2.1.0"
-
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
     implementation "androidx.fragment:fragment:1.2.0-beta02"
-
 
 }
